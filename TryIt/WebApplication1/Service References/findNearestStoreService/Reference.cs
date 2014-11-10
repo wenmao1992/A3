@@ -16,10 +16,10 @@ namespace WebApplication1.findNearestStoreService {
     public interface IService1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/findNearestStore", ReplyAction="http://tempuri.org/IService1/findNearestStoreResponse")]
-        string findNearestStore(string zipcode, string storeName);
+        string[] findNearestStore(string zipcode, string storeName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/findNearestStore", ReplyAction="http://tempuri.org/IService1/findNearestStoreResponse")]
-        System.Threading.Tasks.Task<string> findNearestStoreAsync(string zipcode, string storeName);
+        System.Threading.Tasks.Task<string[]> findNearestStoreAsync(string zipcode, string storeName);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -49,11 +49,11 @@ namespace WebApplication1.findNearestStoreService {
                 base(binding, remoteAddress) {
         }
         
-        public string findNearestStore(string zipcode, string storeName) {
+        public string[] findNearestStore(string zipcode, string storeName) {
             return base.Channel.findNearestStore(zipcode, storeName);
         }
         
-        public System.Threading.Tasks.Task<string> findNearestStoreAsync(string zipcode, string storeName) {
+        public System.Threading.Tasks.Task<string[]> findNearestStoreAsync(string zipcode, string storeName) {
             return base.Channel.findNearestStoreAsync(zipcode, storeName);
         }
     }

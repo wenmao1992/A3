@@ -42,5 +42,23 @@ namespace WebApplication1
    
         }
 
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Number2WordService.Service1Client sv = new Number2WordService.Service1Client();
+            string re = sv.Number2Words(TextBox3.Text);
+            this.Label3.Text = re;
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            findNearestStoreService.Service1Client sv = new findNearestStoreService.Service1Client();
+            string[] re = new string[10];
+            re = sv.findNearestStore(TextBox4.Text, TextBox5.Text);
+            for (int i = 0; i < 10; i++)
+            {
+                this.Label4.Text += "\n" + re[i];
+            }
+        }
+
         }
     }
